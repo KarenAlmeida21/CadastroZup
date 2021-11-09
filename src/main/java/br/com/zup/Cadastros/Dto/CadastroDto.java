@@ -1,35 +1,19 @@
-package br.com.zup.Cadastros.cadastro;
-
-import net.bytebuddy.implementation.bind.MethodDelegationBinder;
+package br.com.zup.Cadastros.Dto;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.time.LocalDate;
 
-@Entity
-@Table(name = "cadastros")
-public class Cadastro {
-    @Id
+public class CadastroDto {
     private String cpf;
-    @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
     private String sobrenome;
     private String cidade;
     private String bairro;
-    @Column(name= "nome_do_parente_proximo")
     private String nomeDoParenteProximo;
-    @Column(name ="morar_sozinho")
     private boolean moraSozinho;
-    @Column(name="tem_pet")
     private boolean temPet;
     private int idade;
-    @Column (name = "data_do_cadastro")
-    private LocalDate dataDoCadastro;
 
-    public Cadastro() {
+    public CadastroDto() {
     }
 
     public String getCpf() {
@@ -79,15 +63,6 @@ public class Cadastro {
     public void setNomeDoParenteProximo(String nomeDoParenteProximo) {
         this.nomeDoParenteProximo = nomeDoParenteProximo;
     }
-
-    public LocalDate getDataDoCadastro() {
-        return dataDoCadastro;
-    }
-
-    public void setDataDoCadastro(LocalDate dataDoCadastro) {
-        this.dataDoCadastro = dataDoCadastro;
-    }
-
 
     public boolean isMoraSozinho() {
         return moraSozinho;
